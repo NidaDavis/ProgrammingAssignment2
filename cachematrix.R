@@ -1,7 +1,4 @@
-
-
-
-## makeCacheMatrix() is a function which calculates and put in cash the 
+## makeCacheMatrix() is a function which calculates and stores cache
 ## value of the reverse of the input matrix
 ## input: a matrix
 ## output: a list of 4 objects "functions"
