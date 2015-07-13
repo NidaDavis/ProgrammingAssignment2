@@ -54,11 +54,6 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve() takes a matrix and returns the inverse of the matrix
-## if the inverse exists in cash then get it from cash else comput
-## input: matrix 
-## output: the inverse matrix 
-
 cacheSolve <- function(x, ...) {
        
         ## Return a matrix that is the inverse of 'x'
