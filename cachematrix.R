@@ -1,4 +1,5 @@
-## makeCacheMatrix() is a function which calculates and stores cache
+
+## makeCacheMatrix() is a function which calculates and put in cash the 
 ## value of the reverse of the input matrix
 ## input: a matrix
 ## output: a list of 4 objects "functions"
@@ -9,43 +10,31 @@
 
 makeCacheMatrix <- function(x = matrix()) {
   
-        ## initialize vinv which holds the cashed value     
         matrixinv <- NULL
         
         setmatrix<- function(y){
           
-                ## assign a new value y to matrix x 
-          
                 x<<- y 
-                
-                ## reset the vinv var to null in the parent environment 
-                ## as a new value is assigned to matrix x
-                
+
                 matrixinv <<- NULL
-                
         }
         
-        ## get the value of the matrix
         
         getmatrix <- function() {
                 x
         }
-        
-        ## create the inverse matrix in the cash
         
         setinversematrix <- function(inverse){
           
                 matrixinv <<- inverse
         }
         
-        ## get the value of the inverse stored in cash
         
         getinversematrix <- function(){
           
                matrixinv
         }
         
-        ## return the list
         
         list(setmatrix = setmatrix, getmatrix = getmatrix,
              setinversematrix = setinversematrix, 
@@ -53,29 +42,22 @@ makeCacheMatrix <- function(x = matrix()) {
         
 }
 
+## cacheSolve() takes a matrix and returns the inverse of the matrix
 
 cacheSolve <- function(x, ...) {
-       
-        ## Return a matrix that is the inverse of 'x'
-  
+      
         matrixinv <- x$getinversematrix()
-        
-        ## if the data is stored in cash get it
         
         if(!is.null(matrixinv)) {
                 message("getting cached data")
                 return(vinv)
         }
-        ## else get the matrix, calculate inverse 
+ 
         vmatrix<- x$getmatrix()
         
         matrixinv <- solve(vmatrix, ...)
         
-        ## store it in cash via setinvesrematrix
-       
          x$setinversematrix(matrixinv)
-        
-         ## print inverse
-        
+
          matrixinv
 }
